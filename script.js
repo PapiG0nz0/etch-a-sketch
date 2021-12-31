@@ -8,6 +8,39 @@ const btnWarm = document.createElement('button');
 const btnNeon = document.createElement('button');
 const btnSize = document.createElement('button');
 
+//Resize the grid
+function reSet(){
+  const boxes = container.querySelectorAll('.box');
+  boxes.forEach( box => box.remove())
+}
+
+function reSize(){
+  btnSize.textContent = 'GRID SIZE';
+  btnSize.addEventListener('click', () => {
+    let newSize = prompt('Choose your new grid size');
+    if( newSize === null || newSize < 1){
+      reSet();
+      createGrid(16,16);
+      grayColor();
+      blackColor();
+      rgbColor();
+      coldColor();
+      warmColor();
+      neonColor();
+    } else  {
+      reSet();
+      createGrid(newSize,newSize)
+      grayColor();
+      blackColor();
+      rgbColor();
+      coldColor();
+      warmColor();
+      neonColor();
+    }
+  })
+  buttons.appendChild(btnSize).classList.add('btn')
+}
+reSize();
 
 //Here we create the grid 
 function createGrid(col, row){
@@ -119,3 +152,4 @@ function neonColor(){
   buttons.appendChild(btnNeon).classList.add('btn')
 }
 neonColor();
+

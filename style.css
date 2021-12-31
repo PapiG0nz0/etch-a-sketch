@@ -19,6 +19,7 @@
   font-family: 'Shizuru', cursive;
   color: #121212;
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 /*Drawing box*/
@@ -36,6 +37,10 @@
   height: 600px;
   display: grid;
   z-index: 100;
-  margin-top: -230px;
-  
+  margin-bottom: 50px;
+  box-shadow: rgb(0 0 0 / 40%) 0px 5px 10px;
+}
+
+.box{
+  border: 10px solid transparent !important;
 }
