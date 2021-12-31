@@ -35,5 +35,19 @@ function grayColor() {
 
   buttons.appendChild(btnGray).classList.add('btn')
 }
-
 grayColor();
+
+//Black color painting
+function blackColor() {
+  const boxes = container.querySelectorAll('.box');
+  btnBlack.textContent = 'BLACK';
+  btnBlack.addEventListener('click', () => {
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+      box.style.background = 'black';
+    }))
+
+  })
+
+  buttons.appendChild(btnBlack).classList.add('btn')
+}
+blackColor();
