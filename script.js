@@ -2,8 +2,10 @@ const container = document.querySelector('.container');
 const buttons = document.querySelector('.buttons');
 const btnBlack = document.createElement('button');
 const btnGray = document.createElement('button');
+const btnRgb = document.createElement('button');
 const btnCold = document.createElement('button');
 const btnWarm = document.createElement('button');
+const btnNeon = document.createElement('button');
 const btnSize = document.createElement('button');
 
 
@@ -51,3 +53,69 @@ function blackColor() {
   buttons.appendChild(btnBlack).classList.add('btn')
 }
 blackColor();
+
+//RGB color painting
+function rgbColor() {
+  const boxes = container.querySelectorAll('.box');
+  btnRgb.textContent = 'RAINBOW';
+  btnRgb.addEventListener('click', () => {
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+      let r = Math.floor(Math.random() * 255)
+      let g = Math.floor(Math.random() * 255)
+      let b = Math.floor(Math.random() * 255)
+      box.style.background = `rgb(${r},${g},${b})`
+    }))
+
+  })
+
+  buttons.appendChild(btnRgb).classList.add('btn')
+}
+rgbColor();
+
+//Cold color painting
+function coldColor(){
+  const boxes = container.querySelectorAll('.box');
+  btnCold.textContent = 'COLD';
+  btnCold.addEventListener('click', () => {
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+      const cold = ['#1A374D', '#406882', '#6998AB', '#B1D0E0'];
+      const randomCold = Math.floor(Math.random() * cold.length);
+      box.style.background = cold[randomCold];
+    }))
+
+  })
+  buttons.appendChild(btnCold).classList.add('btn')
+}
+coldColor();
+
+//Warm color painting
+function warmColor(){
+  const boxes = container.querySelectorAll('.box');
+  btnWarm.textContent = 'WARM';
+  btnWarm.addEventListener('click', () => {
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+      const warm = ['#AA4A30', '#D57149', '#E89F71', '#EDCFA9'];
+      const randomWarm = Math.floor(Math.random() * warm.length);
+      box.style.background = warm[randomWarm];
+    }))
+
+  })
+  buttons.appendChild(btnWarm).classList.add('btn')
+}
+warmColor();
+
+//Neon color painting
+function neonColor(){
+  const boxes = container.querySelectorAll('.box');
+  btnNeon.textContent = 'NEON';
+  btnNeon.addEventListener('click', () => {
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+      const neon = ['#93FFD8', '#FF5DA2', '#9C19E0', '#000D6B', '#160040'];
+      const randomNeon = Math.floor(Math.random() * neon.length);
+      box.style.background = neon[randomNeon];
+    }))
+
+  })
+  buttons.appendChild(btnNeon).classList.add('btn')
+}
+neonColor();
