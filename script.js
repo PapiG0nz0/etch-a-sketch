@@ -6,7 +6,14 @@ const btnRgb = document.createElement('button');
 const btnCold = document.createElement('button');
 const btnWarm = document.createElement('button');
 const btnNeon = document.createElement('button');
+const btnClear = document.createElement('button');
 const btnSize = document.createElement('button');
+
+//
+window.onload = () => {
+  const boxes = document.querySelectorAll('.box')
+  boxes.forEach( box => box.style.background = 'white')
+}
 
 //Resize the grid
 function reSet(){
@@ -153,3 +160,37 @@ function neonColor(){
 }
 neonColor();
 
+//Clear the drawing box
+function clearBox(){
+  const boxes = container.querySelectorAll('.box');
+  btnClear.textContent = 'RESET';
+  btnClear.addEventListener('click', () => {
+    boxes.forEach(box => box.style.background = 'white')
+  })
+  buttons.appendChild(btnClear).classList.add('btn')
+}
+clearBox();
+//Background animation
+
+function backgroundAnimation(){
+    colors = ['white'];
+    const section = document.querySelector('.section')
+    const span = document.createElement('span')
+
+    let size = Math.random() * 50;
+
+    span.style.width = 5 * size + 'px'
+    span.style.height = 5 * size + 'px' 
+    span.style.borderRadius = `${size}%`
+    span.style.top = Math.random() * innerHeight + 'px'
+    span.style.left = Math.random() * innerWidth + 'px'
+
+    const backgroundColor = colors[Math.floor(Math.random()) * colors.length] 
+
+    span.style.background = backgroundColor;
+    section.appendChild(span);
+
+    setTimeout(() => (span.remove), 3000)
+}
+
+setInterval(backgroundAnimation, 400);
