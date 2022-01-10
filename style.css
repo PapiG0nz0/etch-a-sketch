@@ -41,6 +41,7 @@ body{
   height: 600px;
   display: grid;
   z-index: 100;
+  margin-top: -600px;
   box-shadow: rgb(249 252 251 / 50%) 0px 5px 10px;
 }
 
@@ -50,6 +51,27 @@ body{
 
 .box{
   border: 10px solid transparent !important;
+}
+
+/* Buttons */
+.buttons{
+  width: 600px;
+  position: absolute;
+  padding: 3em 0;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn{
+  padding: 0.5em 1em;
+  background: rgb(240, 255, 240);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), inset -5px -5px 20px rgba(255, 255, 255, 1);
+  border: none;
+  outline: none;
+  font-weight: bold;
+  z-index: 100;
+  letter-spacing: 1px;
 }
 
 /*Background animation*/

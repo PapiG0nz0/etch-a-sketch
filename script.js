@@ -11,17 +11,21 @@ const btnSize = document.createElement('button');
 
 //
 window.onload = () => {
-  const boxes = document.querySelectorAll('.box')
+  const boxes = container.querySelectorAll('.box')
   boxes.forEach( box => box.style.background = 'white')
 }
 
-//Resize the grid
+//reset function
 function reSet(){
-  const boxes = container.querySelectorAll('.box');
-  boxes.forEach( box => box.remove())
+  const boxes = container.querySelectorAll('.box')
+  boxes.forEach(box => {
+    box.remove();
+  })
 }
 
+//Resize the grid
 function reSize(){
+  const boxes = container.querySelectorAll('.box')
   btnSize.textContent = 'GRID SIZE';
   btnSize.addEventListener('click', () => {
     let newSize = prompt('Choose your new grid size');
@@ -53,7 +57,6 @@ reSize();
 function createGrid(col, row){
   for(let i = 0 ; i < (col * row); i++ ){
     const div = document.createElement('div');
-    div.style.border = '1px solid black';
     container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${row}, 1fr)`;
     container.appendChild(div).classList.add('box');
@@ -190,7 +193,7 @@ function backgroundAnimation(){
     span.style.background = backgroundColor;
     section.appendChild(span);
 
-    setTimeout(() => (span.remove), 3000)
+    setTimeout(() => (span.remove), 1000)
 }
 
 setInterval(backgroundAnimation, 400);
